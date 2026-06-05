@@ -1,47 +1,142 @@
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+:root{
+  --primary: white;
+  --secondary: orange;
+  --grey: rgb(33,33,33);
+  --input:rgba(255,255,255,0.3);
+}
+
+@font-face {
+  font-family: 'jost';
+  src: url(./fonts/Jost-VariableFont_wght.ttf);
+} 
+
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color : rgb(33, 33, 33);
-    color: white;
+  font-family: 'jost', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--grey);
+  color: white;
 }
 
 .container{
-    width: 100%;
-    height: 100%;
-    padding: 0px 20px;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 0px 20px;
+  display: flex;
+  justify-content: center;
+  border-radius: 5px;
 }
 
-.todo-app{
-    width: 100%;
-    max-width: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 30px;
-    color: white;
-    border-radius: 20px;
-    background-color: rgb(33, 33, 33);
-    border: 3px solid orange;
-    box-shadow: 0px 0px 100px rgba(255, 166, 2, 0.318);
-    backdrop-filter: blur(10px);
+.todo-app {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 30px;
+  color: var(--primary);
+  border-radius: 20px;
+  background-color: var(--grey);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border: 3px solid var(--secondary);
+  box-shadow: 0px 0px 100px rgba(255, 166, 0, 0.3);
+  transition: all 0.4s ease;
 }
 
 
+.todo-app:hover {
+  border-color: pink;
+  box-shadow: 0px 0px 100px rgba(255, 192, 203, 0.5);
+}
 
-.main{
-    display: flex;
-    gap: 20px;
+.todo-app:hover h1 {
+  color: pink;
+}
+
+.todo-app:hover #add,
+.todo-app:hover .editDeleteBtn {
+  background-color: pink;
+}
+
+.todo-app:hover input {
+  box-shadow: 0 0 15px rgba(255, 192, 203, 0.5);
+}
+
+.todo-app h1 {
+  font-size: 2rem;
+  transition: all 0.4s ease;
+}
+
+.input-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 0.3rem;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 5px 17px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background-color: var(--input);
+  color: var(--primary);
+  transition: all 0.4s ease;
+}
+
+.input-area input::placeholder {
+  color: var(--primary);
+}
+
+#add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--primary);
+  background-color: var(--secondary);
+  width: 75px;
+  border-radius: 50px;
+  padding: 4px 8px;
+  outline: none;
+  border: 2px solid rgba(42, 42, 42, 0.417);
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.main {
+  display: flex;
+  gap: 20px;
+}
+
+.todos-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.editDeleteBtn {
+  border: none;
+  padding: 2px;
+  border-radius: 50px;
+  background-color: var(--secondary);
+  color: white;
+  transition: all 0.4s ease;
+}
+
+.editDeleteBtn:hover,#add:hover  {
+  background-color: pink;
+  color: white;
+  box-shadow: 0 0 10px rgba(255, 192, 203, 0.6);
 }
