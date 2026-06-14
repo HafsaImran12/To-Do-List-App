@@ -18,24 +18,6 @@ A simple and responsive To-Do List application built using **HTML, CSS, and Java
 * 🎨 CSS3
 * ⚙️ JavaScript (ES6)
 
-## 📂 Project Structure
-
-```text
-todo-app/
-│
-├── index.html
-├── style.css
-├── app.js
-└── README.md
-```
-. 🌐 Open `index.html` in your browser
-
-## 🔮 Future Improvements
-
-* ✅ Mark tasks as completed
-* 💾 Save tasks using Local Storage
-* 🔍 Add task filters and categories
-
 ## 👩‍💻 Author
 
 Made by **Hafsa Imran**
